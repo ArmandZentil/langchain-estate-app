@@ -10,7 +10,7 @@ import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 const model = new OpenAI({});
 
 
-const loader = new TextLoader("dataPdfs/gzWill.txt");
+const loader = new TextLoader("dataPdfs/data.txt");
 
 // const loader = new PDFLoader("dataPdfs/gzWill.pdf", {
 //   splitPages: false,
@@ -30,6 +30,19 @@ const query = process.argv[2];
 
 const chain = RetrievalQAChain.fromLLM(model, vectorStore.asRetriever());
   const res = await chain.call({
-    query: "Who are the trustees?",
+    query: "whats the net price total?",
   });
   console.log({ res });
+
+ //  	function populateBoxWithText() {
+  		
+ //  		var boxElement = document.querySelector('.box');
+ //  		if (boxElement) {
+ //    	boxElement.textContent = `${res}`;
+ //  		}
+	// }g
+
+	// populateBoxWithText();
+
+
+
